@@ -203,10 +203,10 @@ class McpServerSettingsConfigurable : SearchableConfigurable {
 
       group(McpServerBundle.message("settings.genx.group")) {
         row(McpServerBundle.message("settings.genx.api.key")) {
-          textField().bindText({ settings.state.genXApiKey.orEmpty() }, { settings.state.genXApiKey = it })
+          passwordField().bindText({ settings.genXApiKey.orEmpty() }, { settings.genXApiKey = it })
         }
         row(McpServerBundle.message("settings.genx.github.token")) {
-          textField().bindText({ settings.state.githubToken.orEmpty() }, { settings.state.githubToken = it })
+          passwordField().bindText({ settings.githubToken.orEmpty() }, { settings.githubToken = it })
         }
       }.visibleIf(enabledCheckboxState!!)
     }
